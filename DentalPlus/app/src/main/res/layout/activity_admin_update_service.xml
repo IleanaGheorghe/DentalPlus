@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminInterface.AdminUpdateService"
+    android:background="@drawable/login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tvActServiciu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Actualizare serviciu"
+            style="@style/Base.TextAppearance.AppCompat.Body2"
+            android:textColor="@color/login"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="100dp"
+            android:textSize="25sp"
+            android:padding="16dp"
+            />
+        <EditText
+            android:id="@+id/etEditareCodServ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:hint="Cod serviciu : srv1, srv2.."
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:textColorHint="@color/login"
+            android:layout_marginTop="20dp"
+            android:autofillHints="" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/login" />
+        <EditText
+            android:id="@+id/etEditareNumeServ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:hint="Nume serviciu"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:textColorHint="@color/login"
+            android:layout_marginTop="20dp"
+            android:autofillHints="" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/login" />
+
+        <EditText
+            android:id="@+id/etEditarePretServ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:hint="Pret serviciu"
+            android:inputType="number"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:textColorHint="@color/login"
+            android:layout_marginTop="20dp"
+            android:autofillHints="" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/login" />
+
+        <Button
+            android:id="@+id/btnActualizareServiciu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/background_signup"
+            android:clickable="true"
+            android:padding="16dp"
+            android:text="Actualizare"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            android:focusable="true" />
+    </LinearLayout>
+
+</LinearLayout>

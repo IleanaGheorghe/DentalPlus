@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#85CFCE"
+    tools:context=".DoctorInterface.fragment_AddAppoinments">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="#85CFCE"
+       android:id="@+id/llAddAppointments"
+       android:orientation="vertical">
+
+
+       <TextView
+           android:id="@+id/tvAddApp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:drawableStart="@drawable/plus1"
+           android:paddingLeft="10dp"
+           android:text="Adaugare programare noua"
+           android:textColor="@color/login"
+           android:textSize="20sp" />
+       <TextView
+           android:id="@+id/tvAppAct"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:layout_marginBottom="10dp"
+           android:background="@drawable/background_signup"
+           android:paddingLeft="10dp"
+           android:text="Programari"
+           android:textAlignment="center"
+           android:textColor="#FFFF"
+           android:textSize="20sp" />
+
+       <TextView
+           android:id="@+id/tvLunaAn"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:background="#F05956"
+           android:paddingLeft="10dp"
+           android:text="Programari"
+           android:textAlignment="center"
+           android:textColor="#FFFF"
+           android:textSize="20sp" />
+
+       <com.github.sundeepk.compactcalendarview.CompactCalendarView
+           xmlns:app="http://schemas.android.com/apk/res-auto"
+           android:id="@+id/compactcalendar_view"
+           android:layout_width="fill_parent"
+           android:paddingRight="10dp"
+           android:paddingLeft="10dp"
+           android:layout_height="250dp"
+           app:compactCalendarTargetHeight="250dp"
+           app:compactCalendarTextSize="12sp"
+           app:compactCalendarBackgroundColor="#F05956"
+           app:compactCalendarTextColor="#fff"
+           app:compactCalendarCurrentSelectedDayBackgroundColor="#E57373"
+           app:compactCalendarCurrentDayBackgroundColor="#B71C1C"
+           app:compactCalendarMultiEventIndicatorColor="#fff"
+           />
+
+       <ListView
+           android:id="@+id/lvProgramariData"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent" />
+
+   </LinearLayout>
+
+</FrameLayout>

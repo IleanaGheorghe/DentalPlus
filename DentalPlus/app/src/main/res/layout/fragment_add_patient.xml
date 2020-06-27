@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoctorInterface.fragment_addPatient"
+    android:background="#85CFCE"
+    android:id="@+id/llAddP"
+    android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tvPacienti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="@string/pacientiDB"
+            android:textColor="@color/login"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvAddPat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/plus1"
+            android:paddingLeft="10dp"
+            android:text="Adaugare pacient nou"
+            android:textColor="@color/login"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvPatAct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/background_signup"
+            android:paddingLeft="10dp"
+            android:text="Pacienti"
+            android:textAlignment="center"
+            android:textColor="#FFFF"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/etCautaNume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Cauta dupa nume"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:background="@drawable/background_login"
+            android:textSize="20sp" />
+
+        <ListView
+            android:id="@+id/lvPatients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:dividerHeight="0dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+</LinearLayout>

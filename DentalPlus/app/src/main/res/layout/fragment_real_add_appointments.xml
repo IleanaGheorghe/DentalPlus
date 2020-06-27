@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoctorInterface.RealAddAppointments">
+
+    <LinearLayout
+        android:id="@+id/llRealAddApp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="#85CFCE"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvProg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/background_signup"
+            android:paddingLeft="10dp"
+            android:text="Programare noua"
+            android:textAlignment="center"
+            android:textColor="#FFFF"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvDataApp"
+                android:layout_width="100dp"
+                android:layout_height="39dp"
+                android:background="@drawable/background_login"
+                android:paddingLeft="10dp"
+                android:text="Data:       "
+                android:textSize="16sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/etDataApp"
+                android:layout_width="225dp"
+                android:layout_height="39dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/background_login"
+                android:hint="Introduceti data"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvOraInceputApp"
+                android:layout_width="100dp"
+                android:layout_height="39dp"
+                android:background="@drawable/background_login"
+                android:paddingLeft="10dp"
+                android:text="Ora start:"
+                android:textSize="16sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/etOraInceputApp"
+                android:layout_width="225dp"
+                android:layout_height="39dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/background_login"
+                android:hint="Introduceti ora inceput"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvOraSfarsitApp"
+                android:layout_width="100dp"
+                android:layout_height="39dp"
+                android:background="@drawable/background_login"
+                android:paddingLeft="10dp"
+                android:text="Ora end: "
+                android:textSize="16sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/etOraSfarsitApp"
+                android:layout_width="225dp"
+                android:layout_height="39dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/background_login"
+                android:hint="Introduceti ora sfarsit"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvDoctorApp"
+                android:layout_width="100dp"
+                android:layout_height="39dp"
+                android:background="@drawable/background_login"
+                android:paddingLeft="10dp"
+                android:text="Doctor: "
+                android:textSize="16sp"
+                android:gravity="center"
+                />
+
+            <Spinner
+                android:id="@+id/spDoctorApp"
+                android:layout_width="225dp"
+                android:layout_height="39dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/background_login"
+                android:hint="Doctor.."
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:padding="0dp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvPacientApp"
+                android:layout_width="100dp"
+                android:layout_height="39dp"
+                android:background="@drawable/background_login"
+                android:paddingLeft="10dp"
+                android:text="Pacient:"
+                android:textSize="16sp"
+                android:gravity="center"
+                />
+
+            <Spinner
+                android:id="@+id/spPacientApp"
+                android:layout_width="225dp"
+                android:layout_height="39dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/background_login"
+                android:hint="Pacient.."
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:padding="0dp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvServiciuApp"
+                android:layout_width="100dp"
+                android:layout_height="39dp"
+                android:background="@drawable/background_login"
+                android:paddingLeft="10dp"
+                android:text="Serviciu:"
+                android:textSize="16sp"
+                android:gravity="center"/>
+
+            <Spinner
+                android:id="@+id/spServiciuApp"
+                android:layout_width="225dp"
+                android:layout_height="39dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/background_login"
+                android:hint="Serviciu.."
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:padding="0dp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSaveAppointments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/background_signup"
+            android:text="Salvare programare"
+            android:textColor="#FFFF">
+
+        </Button>
+    </LinearLayout>
+
+</FrameLayout>

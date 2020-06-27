@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/llRealAddPatient"
+    android:orientation="horizontal"
+    android:background="#85CFCE"
+    tools:context=".DoctorInterface.RealAddPatient">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tvNumeAdd"
+            android:layout_width="98dp"
+            android:layout_height="31dp"
+            android:text="Nume:"
+            android:background="@drawable/background_login"
+            android:textSize="20dp"
+         />
+
+        <EditText
+            android:id="@+id/etNumeAdd"
+            android:layout_width="320dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="35dp"
+            android:ems="10"
+            android:hint="Nume"
+            android:inputType="textPersonName"
+            android:background="@drawable/background_login"
+            android:textSize="20dp"
+            android:focusable="true"
+            />
+
+        <TextView
+            android:id="@+id/tvEmailAdd"
+            android:layout_width="116dp"
+            android:layout_height="38dp"
+            android:text="Email:"
+            android:background="@drawable/background_login"
+            android:textSize="20dp"
+          />
+
+        <EditText
+            android:id="@+id/etEmailAdd"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="36dp"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textPersonName"
+            android:background="@drawable/background_login"
+            android:textSize="20dp"
+            android:focusable="true"
+            />
+
+        <TextView
+            android:id="@+id/tvPhoneAdd"
+            android:layout_width="114dp"
+            android:layout_height="39dp"
+            android:text="Telefon:"
+            android:background="@drawable/background_login"
+            android:textSize="20dp"
+             />
+
+        <EditText
+            android:id="@+id/etTelefonAdd"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="36dp"
+            android:ems="10"
+            android:hint="Telefon"
+            android:inputType="phone"
+            android:background="@drawable/background_login"
+            android:focusable="true"
+             />
+
+        <TextView
+            android:id="@+id/tvBirthDateAdd"
+            android:layout_width="157dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:text="Data nastere:"
+            android:background="@drawable/background_login"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/etBirthDateAdd"
+            android:layout_width="320dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="36dp"
+            android:ems="10"
+            android:hint="Data nastere"
+            android:inputType="textPersonName"
+            android:background="@drawable/background_login"
+            android:textSize="20dp"
+            android:focusable="true"
+            />
+
+        <TextView
+            android:id="@+id/tvObservationsAdd"
+            android:layout_width="113dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:text="Observatii:"
+            android:background="@drawable/background_login"
+            android:textSize="20dp"
+
+            />
+
+        <EditText
+            android:id="@+id/etObservationsAdd"
+            android:layout_width="320dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="36dp"
+            android:ems="10"
+            android:hint="Observatii"
+            android:inputType="textPersonName"
+            android:background="@drawable/background_login"
+            android:textSize="20dp"
+            />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true">
+
+            <RadioButton
+                android:id="@+id/rbFemininAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Feminin"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/background_login"
+                android:textSize="16sp"
+                android:padding="8dp"
+                android:layout_gravity="start"/>
+            <RadioButton
+                android:id="@+id/rbMasculinAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Masculin"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/background_login"
+                android:textSize="16sp"
+                android:padding="8dp"
+                android:layout_gravity="start"/>
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnAddPatient"
+            android:layout_width="117dp"
+            android:layout_height="53dp"
+            android:background="@drawable/background_signup"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="16dp"
+            android:text="Salvare"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            android:layout_marginLeft="250dp"/>
+    </LinearLayout>
+</FrameLayout>

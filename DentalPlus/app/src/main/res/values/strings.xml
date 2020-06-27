@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">DentalPlus</string>
+
+    <string name="hintUsername">Nume utilizator</string>
+    <string name="hintEmail">E-mail</string>
+    <string name="hintPass">Parola</string>
+    <string name="btLogin">Conectare</string>
+    <string name="btSignUp">Sign Up</string>
+    <string name="loginAdmn">Conectare administrator</string>
+    <string name="forget_password">Ati uitat parola?</string>
+    <string name="check_remember_me">Retine date</string>
+    <string name="createAccount">Creare cont</string>
+    <string name="hintUserName">Nume utilizator</string>
+    <string name="hintPhone">Numar telefon</string>
+    <string name="hintDate">Data nastere</string>
+    <string name="firtsname">Prenume</string>
+    <string name="lastname">Nume</string>
+
+    <string name="adminmenu">Meniu administrator</string>
+
+    <string name="ACreateUser">Adaugare medic</string>
+    <string name="ADeleteUser">Stergere medic</string>
+    <string name="ASeeUsers">Vizualizare medici</string>
+    <string name="AAddServices">Adaugare serviciu</string>
+    <string name="AListOfServices">Vizualizare servicii</string>
+    <string name="ADeleteService">Stergere serviciu</string>
+    <string name="ALogOut">Deconectare</string>
+
+    <string name="cbIsDoctor">Este doctor</string>
+    <string name="cbIsPatient">Este pacient</string>
+
+    <string name="StartDoctor">Activitate doctor</string>
+    <string name="StartPatient">Activitate pacient</string>
+    <string name="ConfPass">Confirmare parola</string>
+
+    <string name="action_settings">Setări</string>
+    <string name="error_message">Câmp incomplet/gol</string>
+    <string name="error_password">Parola incorectă</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pacientiDB">Pacienti in baza de date : %1$d</string>
+</resources>

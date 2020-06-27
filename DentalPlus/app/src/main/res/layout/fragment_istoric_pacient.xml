@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoctorInterface.IstoricPacient"
+    android:background="#85CFCE">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DoctorInterface.fragment_addPatient"
+        android:background="#85CFCE"
+        android:id="@+id/llAddP"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvInfoPat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/background_signup"
+            android:paddingLeft="10dp"
+            android:text="Informatii despre pacient"
+            android:textAlignment="center"
+            android:textColor="#FFFF"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/etNumeEditPat"
+            android:layout_width="360dp"
+            android:layout_height="35dp"
+            android:background="@drawable/background_login"
+            android:ems="10"
+            android:hint="Nume pacient"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:textSize="20sp"
+            android:layout_gravity="center"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/etTelefonEditPat"
+                android:layout_width="360dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background_login"
+                android:ems="10"
+                android:hint="Telefon pacient"
+                android:inputType="phone"
+                android:paddingLeft="10dp"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnAPEL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/etTelefonEditPat"
+                android:layout_alignBottom="@+id/etTelefonEditPat"
+                android:layout_alignRight="@+id/etTelefonEditPat"
+                android:text="APEL"
+                android:background="@drawable/background_signup"
+                android:textColor="#FFFF"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/etEmailEditPat"
+                android:layout_width="360dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background_login"
+                android:ems="10"
+                android:hint="Email pacient"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="10dp"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/etEmailEditPat"
+                android:layout_alignBottom="@+id/etEmailEditPat"
+                android:layout_alignRight="@+id/etEmailEditPat"
+                android:text="EMAIL"
+                android:background="@drawable/background_signup"
+                android:textColor="#FFFF"/>
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/etObservatiiEditPat"
+            android:layout_width="360dp"
+            android:layout_height="35dp"
+            android:background="@drawable/background_login"
+            android:ems="10"
+            android:hint="Observatii pacient"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/tvEditPat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/plus1"
+            android:paddingLeft="10dp"
+            android:text="Salvare informatii pacient"
+            android:textColor="@color/login"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvIstoricPat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/background_signup"
+            android:paddingLeft="10dp"
+            android:text="Istoric programari pacient"
+            android:textAlignment="center"
+            android:textColor="#FFFF"
+            android:textSize="20sp" />
+
+        <ListView
+            android:id="@+id/lvIstoric"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp"
+            android:dividerHeight="0dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+        <TextView
+            android:id="@+id/tvDeletePat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/delete2"
+            android:paddingLeft="10dp"
+            android:text="Stergere informatii pacient"
+            android:textColor="@color/login"
+            android:textSize="20sp" />
+    </LinearLayout>
+</ScrollView>
+</FrameLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/mainLayout"
+    tools:context=".DoctorInterface.fragment_settings"
+    android:background="#85CFCE">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnChangePersonalInfo"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:background="@drawable/background_signup"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="16dp"
+            android:text="Editare date utilizator"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnChangePassword"
+            app:layout_constraintHorizontal_bias="0.566"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.21" />
+
+        <Button
+            android:id="@+id/btnChangePassword"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:background="@drawable/background_signup"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="16dp"
+            android:text="Schimbare parola"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.848"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.205" />
+
+        <Button
+            android:id="@+id/btnUserDeconectare"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:background="@drawable/background_signup"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="16dp"
+            android:text="Deconectare"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.84" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/llFragm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"></LinearLayout>
+</LinearLayout>

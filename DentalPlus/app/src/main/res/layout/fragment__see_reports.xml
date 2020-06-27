@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoctorInterface.fragment_SeeReports"
+    android:background="#85CFCE">
+
+    <LinearLayout
+    android:id="@+id/llReports"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#85CFCE"
+    android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvRap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/background_signup"
+            android:paddingLeft="10dp"
+            android:text="Meniu rapoarte"
+            android:textAlignment="center"
+            android:textColor="#FFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnRap1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="50dp"
+            android:gravity="center"
+            android:background="@drawable/background_login"
+            android:text="Raport medici - salariu" />
+        <Button
+            android:id="@+id/btnRap2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="50dp"
+            android:gravity="center"
+            android:background="@drawable/background_login"
+            android:text="Raport servicii - cost" />
+
+        <Button
+            android:id="@+id/btnRap3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="50dp"
+            android:gravity="center"
+            android:background="@drawable/background_login"
+            android:text="Raport programari- servicii" />
+     </LinearLayout>
+
+</FrameLayout>

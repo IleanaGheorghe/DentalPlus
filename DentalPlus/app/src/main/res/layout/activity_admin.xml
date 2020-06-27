@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminInterface.AdminActivity"
+    android:background="@drawable/login">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tvAdminMenu"
+            style="@style/Base.TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:text="@string/adminmenu"
+            android:textColor="@color/login"
+            android:textSize="25sp" />
+
+        <Button
+        android:id="@+id/btnCreateNewDoctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_signup"
+        android:clickable="true"
+        android:padding="16dp"
+        android:text="@string/ACreateUser"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:textSize="18sp"
+        android:focusable="true" />
+
+        <Button
+            android:id="@+id/bntListUsers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/background_signup"
+            android:clickable="true"
+            android:padding="16dp"
+            android:text="@string/ASeeUsers"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            android:focusable="true" />
+
+        <Button
+            android:id="@+id/btnAddServices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/background_signup"
+            android:clickable="true"
+            android:padding="16dp"
+            android:text="@string/AAddServices"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            android:focusable="true" />
+
+        <Button
+            android:id="@+id/btnSeeServices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/background_signup"
+            android:clickable="true"
+            android:padding="16dp"
+            android:text="@string/AListOfServices"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            android:focusable="true"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/btnAddSpecialization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/background_signup"
+            android:clickable="true"
+            android:padding="16dp"
+            android:text="Adaugare specializare"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            android:focusable="true" />
+
+        <Button
+            android:id="@+id/btnSeeSpecialization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/background_signup"
+            android:clickable="true"
+            android:padding="16dp"
+            android:text="Vizualizare specializari"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            android:focusable="true"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/btnLogOutAdmin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/background_signup"
+            android:clickable="true"
+            android:padding="16dp"
+            android:text="@string/ALogOut"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

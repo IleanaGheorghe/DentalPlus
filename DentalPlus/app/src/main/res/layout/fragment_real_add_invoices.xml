@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoctorInterface.RealAddInvoices">
+
+    <LinearLayout
+        android:id="@+id/llRealAddInvoice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="#85CFCE"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvInv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/background_signup"
+            android:paddingLeft="10dp"
+            android:text="Adaugare factura"
+            android:textAlignment="center"
+            android:textColor="#FFFF"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvDataInv"
+                android:layout_width="100dp"
+                android:layout_height="39dp"
+                android:background="@drawable/background_login"
+                android:paddingLeft="10dp"
+                android:text="Data:"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/etDataInv"
+                android:layout_width="225dp"
+                android:layout_height="39dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/background_login"
+                android:hint="Introduceti data"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvProgramare"
+                android:layout_width="100dp"
+                android:layout_height="39dp"
+                android:background="@drawable/background_login"
+                android:paddingLeft="10dp"
+                android:text="Programare"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/etProgramare"
+                android:layout_width="225dp"
+                android:layout_height="39dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/background_login"
+                android:hint="Alegeti programarea"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvDoctorInv"
+                android:layout_width="100dp"
+                android:layout_height="39dp"
+                android:background="@drawable/background_login"
+                android:paddingLeft="10dp"
+                android:text="Doctor:"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvDoctorSp"
+                android:layout_width="225dp"
+                android:layout_height="39dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/background_login"
+                android:hint="Doctor.."
+                android:textAlignment="center"
+                android:enabled="false"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvPacientInv"
+                android:layout_width="100dp"
+                android:layout_height="39dp"
+                android:background="@drawable/background_login"
+                android:paddingLeft="10dp"
+                android:text="Pacient:"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvPacientSp"
+                android:layout_width="225dp"
+                android:layout_height="39dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/background_login"
+                android:hint="Pacient.."
+                android:enabled="false"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvServiciuInv"
+                android:layout_width="100dp"
+                android:layout_height="39dp"
+                android:background="@drawable/background_login"
+                android:paddingLeft="10dp"
+                android:text="Valoare:"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/etServiciuInv"
+                android:layout_width="225dp"
+                android:layout_height="39dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/background_login"
+                android:hint="Valoare factura.."
+                android:enabled="false"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSaveInvoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/background_signup"
+            android:text="Salvare factura"
+            android:textColor="#FFFF">
+
+        </Button>
+    </LinearLayout>
+
+</FrameLayout>

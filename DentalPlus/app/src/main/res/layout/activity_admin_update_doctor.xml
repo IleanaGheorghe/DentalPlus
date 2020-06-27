@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminInterface.AdminUpdateDoctor"
+    android:background="@drawable/login">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tvEditareMedic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Editare medic"
+                style="@style/Base.TextAppearance.AppCompat.Body2"
+                android:textColor="@color/login"
+                android:layout_marginTop="16dp"
+                android:textSize="25sp"
+                android:padding="16dp"
+                />
+            <EditText
+                android:id="@+id/etEditareLname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:hint="@string/lastname"
+                android:inputType="textNoSuggestions"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:textColorHint="@color/login"
+                android:layout_marginTop="20dp"
+                android:autofillHints="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/login" />
+            <EditText
+                android:id="@+id/etEditareFname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:hint="@string/firtsname"
+                android:inputType="textNoSuggestions"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:textColorHint="@color/login"
+                android:layout_marginTop="20dp"
+                android:autofillHints="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/login" />
+
+            <EditText
+                android:id="@+id/etEditareUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:hint="@string/hintUsername"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:textColorHint="@color/login"
+                android:autofillHints=""
+                android:layout_marginTop="20dp"
+                android:enabled="false"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/login" />
+            <EditText
+                android:id="@+id/etEditareEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:hint="@string/hintEmail"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:textColorHint="@color/login"
+                android:autofillHints=""
+                android:layout_marginTop="20dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/login" />
+
+            <EditText
+                android:id="@+id/etEditarePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:hint="@string/hintPass"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:textColorHint="@color/login"
+                android:layout_marginTop="20dp"
+                android:autofillHints="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/login" />
+            <EditText
+                android:id="@+id/etEditarePhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:hint="@string/hintPhone"
+                android:inputType="phone"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:textColorHint="@color/login"
+                android:layout_marginTop="20dp"
+                android:autofillHints="" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/login" />
+
+            <EditText
+                android:id="@+id/etEditareBirthDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:hint="@string/hintDate"
+                android:inputType="date"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:textColorHint="@color/login"
+                android:layout_marginTop="20dp"
+                android:autofillHints="" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/login" />
+
+            <EditText
+                android:id="@+id/etEditareSalary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:hint="Salariul"
+                android:inputType="number"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:textColorHint="@color/login"
+                android:layout_marginTop="20dp"
+                android:autofillHints="" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/login" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <RadioButton
+                    android:id="@+id/rbActivEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Activ"
+                    android:textColor="@color/login"
+                    android:buttonTint="@color/login"
+                    android:textSize="16sp"
+                    android:padding="8dp"
+                    android:layout_gravity="start"/>
+                <RadioButton
+                    android:id="@+id/rbInactivEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inactiv"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/login"
+                    android:buttonTint="@color/login"
+                    android:textSize="16sp"
+                    android:padding="8dp"
+                    android:layout_gravity="start"/>
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btnUpdateDoctor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Base.TextAppearance.AppCompat.Body1"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/background_signup"
+                android:clickable="true"
+                android:padding="16dp"
+                android:text="Editare medic"
+                android:textAllCaps="false"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:focusable="true" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

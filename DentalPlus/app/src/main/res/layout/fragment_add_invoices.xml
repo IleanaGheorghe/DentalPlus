@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoctorInterface.fragment_addInvoices"
+    android:background="#85CFCE">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#85CFCE"
+        android:id="@+id/llAddAInvoices"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tvAddInvoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/plus1"
+            android:paddingLeft="10dp"
+            android:text="Adaugare factura"
+            android:textColor="@color/login"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/tvInvtext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/background_signup"
+            android:paddingLeft="10dp"
+            android:text="Facturi"
+            android:textAlignment="center"
+            android:textColor="#FFFF"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/etCautaDPacient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Cauta dupa nume pacient"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:background="@drawable/background_login"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/InvSortCresc"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_login"
+                android:text="Data - crescator"
+                android:textSize="12dp"
+                android:gravity="center"
+                android:layout_marginRight="5dp"></Button>
+
+            <Button
+                android:id="@+id/InvSortDesc"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_login"
+                android:gravity="center"
+                android:text="Data - descrescator"
+                android:textSize="12dp"
+                android:layout_marginLeft="5dp"></Button>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lvInvoices"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+</FrameLayout>
