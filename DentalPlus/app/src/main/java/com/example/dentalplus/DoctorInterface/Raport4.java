@@ -1,13 +1,16 @@
 package com.example.dentalplus.DoctorInterface;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dentalplus.R;
 import com.example.dentalplus.clase.Appointment;
@@ -21,7 +24,11 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
@@ -111,6 +118,54 @@ public class Raport4 extends Fragment {
 
         BarData data =new BarData(set);
         horizontalBarChart.setData(data);
+        horizontalBarChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, Highlight h) {
+
+                int x=horizontalBarChart.getData().getDataSetForEntry(e).getEntryIndex((BarEntry) e);
+                String spec;
+                spec = fragment_SeeReports.listaDoctori.get(x).getUsername();
+
+                HashMap<String,Integer> mapR;
+                mapR=new HashMap<String, Integer>();
+                for(Service srv:fragment_SeeReports.listaServicii){
+                    mapR.put(srv.getServiceCode(),0);
+                }
+
+                for(Appointment a :fragment_SeeReports.listaProgramari){
+                    if (a.getDoctor().equals(spec)){
+                        mapR.put(a.getServiceCode(), mapR.get(a.getServiceCode())+1);
+                    }
+
+                }
+                String text="";
+                String serviciu="";
+                for(Map.Entry<String, Integer> entry : mapR.entrySet()){
+                    for(Service srv:fragment_SeeReports.listaServicii){
+                        if(srv.getServiceCode().equals(entry.getKey())){
+                            serviciu=srv.getServiceName();
+                        }
+                    }
+                    text=text +serviciu+" - "+ entry.getValue()+"\n";
+                }
+                AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+                builder.setMessage(text);
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                AlertDialog alertDialog=builder.create();
+                alertDialog.setTitle("Lista programari/serviciu: ");
+                alertDialog.show();
+            }
+
+            @Override
+            public void onNothingSelected() {
+
+            }
+        });
 
         XAxis xAxis=horizontalBarChart.getXAxis();
         xAxis.setValueFormatter(new IndexAxisValueFormatter(labels));
