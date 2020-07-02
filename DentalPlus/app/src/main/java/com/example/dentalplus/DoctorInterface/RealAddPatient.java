@@ -225,6 +225,8 @@ public class RealAddPatient extends Fragment {
                                 fragment_addPatient.patientsH.clear();
                                 MainActivity.patients1.clear();
                                 FirstActivityDoctor.patients.clear();
+                                PatientAdapter.patientsAdapte.clear();
+
                                 FragmentTransaction transaction=getFragmentManager().beginTransaction();
                                 transaction.replace(R.id.fragment_container,fragment);
                                 transaction.addToBackStack(null);

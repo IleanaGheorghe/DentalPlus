@@ -217,18 +217,18 @@ public class RealAddAppointments extends Fragment {
                 String serviciu = serviceId;
 
                 SimpleDateFormat format = new SimpleDateFormat("HH:mm");
-                SimpleDateFormat f = new SimpleDateFormat("DD-M-YYYY");
+                SimpleDateFormat f = new SimpleDateFormat("dd-M-yyyy");
 
                 Calendar cal = Calendar.getInstance();
                 int year = cal.get(Calendar.YEAR);
-                int month = cal.get(Calendar.MONTH);
+                int month = cal.get(Calendar.MONTH)+1;
                 int day = cal.get(Calendar.DAY_OF_MONTH);
                 String currentDate = day + "-" + month + "-" + year;
 
                 try {
                     boolean ok = true;
                     Date data1=f.parse(data);
-                    Date cD=f.parse(data);
+                    Date cD=f.parse(currentDate);
                     if (data.isEmpty() || dataI.isEmpty() || dataS.isEmpty() || doctor.isEmpty() || pacient.isEmpty() || serviceId.isEmpty() ||
                             data.equals("") || dataI.equals("") || dataS.equals("") || doctorId.equals("") || patientId.equals("") || serviceId.equals("")
                        ||dataS.equals("Introduceti ora sfarsit") || dataI.equals("Introduceti ora sfarsit")|| data.equals("Introduceti data")) {
@@ -271,7 +271,7 @@ public class RealAddAppointments extends Fragment {
                         if (app == true) {
                             for (Appointment appointment : fragment_AddAppoinments.appointmentsApp) {
                                 if (data.equals(appointment.getDate()) && doctorId.equals(appointment.getDoctor())) {
-                                    if (dataIF.after(format.parse(appointment.getStartH())) && dataSF.after(format.parse(appointment.getEndH()))) {
+                                    if ((dataIF.after(format.parse(appointment.getStartH())) && dataIF.before(format.parse(appointment.getEndH()))) && dataSF.after(format.parse(appointment.getEndH()))) {
                                         Toast.makeText(getActivity(), "Exista deja o programare pentru acest doctor in intervalul orar ales!", Toast.LENGTH_SHORT).show();
 
                                         app = false;
@@ -339,9 +339,11 @@ public class RealAddAppointments extends Fragment {
                             if (v == v.findViewById(R.id.btnSaveAppointments)) {
                                 fragment = new fragment_AddAppoinments();
                             }
-                            AppointmentAdapter.appointmentAdapte.clear();
+                            /*AppointmentAdapter.appointmentAdapte.clear();
                             fragment_AddAppoinments.appointmentAdapterApp.clear();
-                            fragment_AddAppoinments.appointmentHolderApp.clear();
+                            fragment_AddAppoinments.appointmentHolderApp.clear();*/
+                            fragment_AddAppoinments.appointmentAdapterApp.notifyDataSetChanged();
+
                             FragmentTransaction transaction = getFragmentManager().beginTransaction();
                             transaction.replace(R.id.fragment_container, fragment);
                             transaction.addToBackStack(null);

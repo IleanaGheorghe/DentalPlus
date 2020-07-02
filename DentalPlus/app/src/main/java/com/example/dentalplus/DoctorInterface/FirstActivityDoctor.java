@@ -74,7 +74,6 @@ public class FirstActivityDoctor extends AppCompatActivity {
                 for(DataSnapshot ds:dataSnapshot.getChildren()){
                     Service service=ds.getValue(Service.class);
                     services.add(service);
-                    services.add(service);
                 }
             }
 

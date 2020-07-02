@@ -96,7 +96,7 @@ public class fragment_AddAppoinments extends Fragment {
     public static ArrayList<Doctor> doctorsApp;
     public static ArrayList<Patient> patientsApp;
     public static ArrayList<Service> servicesApp;
-    ListView lvProgramariData;
+   public static ListView lvProgramariData;
 
     DatabaseReference dbAppointments;
     public static ArrayList<AppointmentHolder> appointmentHolderApp;
@@ -126,6 +126,7 @@ public class fragment_AddAppoinments extends Fragment {
         tvLunaAn.setText(dateFormatMonth.format(Calendar.getInstance().getTime()).toUpperCase());
 
         dbAppointments=FirebaseDatabase.getInstance().getReference("appointments");
+
         AppointmentAdapter.appointmentAdapte.clear();
         appointmentHolderApp=new ArrayList<>();
 
@@ -271,8 +272,11 @@ public class fragment_AddAppoinments extends Fragment {
     }
 
     public void initProgramari(){
-        final String data=dateFormat.format(Calendar.getInstance().getTime());
-        AppointmentAdapter.appointmentAdapte.clear();
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH)+1;
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        final String currentDate = day + "-" + month + "-" + year;
 
         dbAppointments.addValueEventListener(new ValueEventListener() {
             @Override
@@ -282,7 +286,7 @@ public class fragment_AddAppoinments extends Fragment {
 
                 for(DataSnapshot ds :dataSnapshot.getChildren()){
                     AppointmentHolder app=ds.getValue(AppointmentHolder.class);
-                    if(data.equals(app.getDate())){
+                    if(currentDate.equals(app.getDate())){
                         appointmentAdapterApp.add(app);
                         appointmentHolderApp.add(app);
                     }

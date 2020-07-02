@@ -1,10 +1,13 @@
 package com.example.dentalplus.DoctorInterface;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.text.SpannableString;
@@ -15,14 +18,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dentalplus.R;
 import com.example.dentalplus.clase.Service;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -111,7 +118,7 @@ public class Raport2 extends Fragment {
          valServ.add(mediu);
          valServ.add(mare);
 
-        String[] specializari={"MIC (<50)","MEDIU (50-150)","MARE >(150)"};
+        final String[] specializari={"MIC (<50)","MEDIU (50-150)","MARE >(150)"};
 
         pieChart.setUsePercentValues(false);
         pieChart.getDescription().setText("PREȚ SERVICII / NUMĂR SERVICII");
@@ -139,7 +146,58 @@ public class Raport2 extends Fragment {
         data.setValueTextSize(25f);
         data.setValueTextColor(Color.WHITE);
         pieChart.setData(data);
+        pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, Highlight h) {
+                int x=pieChart.getData().getDataSetForEntry(e).getEntryIndex((PieEntry)e);
+                String spec;
+                spec = specializari[x];
+                ArrayList<String> l=new ArrayList<>();
+                if(spec.equals("MIC (<50)")){
+                    for(Service service:fragment_SeeReports.listaServicii){
+                        if(Integer.valueOf(service.getServicePrice())<=50){
+                            l.add(service.getServiceName());
+                        }
+                    }
+                }
+                if(spec.equals("MEDIU (50-150)")){
+                    for(Service service:fragment_SeeReports.listaServicii){
+                        if(Integer.valueOf(service.getServicePrice())>50 && Integer.valueOf(service.getServicePrice())<=150){
+                            l.add(service.getServiceName());
+                        }
+                    }
+                }
+                if(spec.equals("MARE >(150)")){
+                    for(Service service:fragment_SeeReports.listaServicii){
+                        if(Integer.valueOf(service.getServicePrice())>150){
+                            l.add(service.getServiceName());
+                        }
+                    }
+                }
+                String text="";
+                for(int i=0;i<l.size();i++){
+                    text=text +l.get(i)+"\n";
+                }
+                AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+                builder.setMessage(text);
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                AlertDialog alertDialog=builder.create();
+                alertDialog.setTitle("Lista servicii: ");
+                alertDialog.show();
+            }
+
+            @Override
+            public void onNothingSelected() {
+
+            }
+        });
         pieChart.invalidate();
          return view;
     }
+
 }

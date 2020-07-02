@@ -6,9 +6,11 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -43,11 +45,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.FileReader;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -109,6 +114,7 @@ public class EditAppointment extends Fragment {
 
     private DatePickerDialog.OnDateSetListener datePickerDialog;
     public static Appointment appoint;
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -229,6 +235,7 @@ public class EditAppointment extends Fragment {
 
             loadDataInSpinners();
 
+
             for(Appointment a:fragment_AddAppoinments.appointmentsApp){
                 if (fragment_AddAppoinments.app.equals(a.getAppId().toString())){
                     appoint=new Appointment(a.getAppId(),a.getDate(), a.getDoctor(),a.getEndH(),a.getPatient(),a.getServiceCode(), a.getStartH());
@@ -272,11 +279,11 @@ public class EditAppointment extends Fragment {
                             String serviciu=serviceId;
 
                             SimpleDateFormat format =new SimpleDateFormat("HH:mm");
-                            SimpleDateFormat f=new SimpleDateFormat("DD-M-YYYY");
+                            SimpleDateFormat f=new SimpleDateFormat("dd-M-yyyy", Locale.getDefault());
 
                             Calendar cal=Calendar.getInstance();
                             int year=cal.get(Calendar.YEAR);
-                            int month=cal.get(Calendar.MONTH);
+                            int month=cal.get(Calendar.MONTH)+1;
                             int day =cal.get(Calendar.DAY_OF_MONTH);
                             String currentDate=day+"-"+month+"-"+year;
 
@@ -309,9 +316,10 @@ public class EditAppointment extends Fragment {
                                     }
 
                                     //verificare interval
-                                    if(app==true){
-                                        for(Appointment appointment: appointments){
-                                            if(data.equals(appointment.getDate()) && doctorId.equals(appointment.getDoctor())){
+                                    //verificare interval
+                                    if (app == true) {
+                                        for (Appointment appointment : appointments) {
+                                            if (data.equals(appointment.getDate()) && doctorId.equals(appointment.getDoctor())) {
                                                 if (dataIF.after(format.parse(appointment.getStartH())) && dataIF.before(format.parse(appointment.getEndH()))) {
                                                     Toast.makeText(getActivity(), "Exista deja o programare pentru acest doctor in intervalul orar ales!", Toast.LENGTH_SHORT).show();
 
@@ -322,10 +330,10 @@ public class EditAppointment extends Fragment {
                                         }
                                     }
 
-                                    if(app==true){
-                                        for(Appointment appointment: appointments){
-                                            if(data.equals(appointment.getDate()) && doctorId.equals(appointment.getDoctor())){
-                                                if(dataIF.after(format.parse(appointment.getStartH())) && dataSF.after(format.parse(appointment.getEndH()))) {
+                                    if (app == true) {
+                                        for (Appointment appointment : appointments) {
+                                            if (data.equals(appointment.getDate()) && doctorId.equals(appointment.getDoctor())) {
+                                                if ((dataIF.after(format.parse(appointment.getStartH())) && dataIF.before(format.parse(appointment.getEndH()))) && dataSF.after(format.parse(appointment.getEndH()))) {
                                                     Toast.makeText(getActivity(), "Exista deja o programare pentru acest doctor in intervalul orar ales!", Toast.LENGTH_SHORT).show();
 
                                                     app = false;
@@ -347,9 +355,9 @@ public class EditAppointment extends Fragment {
                             }
                         }
                     }*/
-                                    if(app==true){
-                                        for(Appointment appointment: appointments){
-                                            if(data.equals(appointment.getDate()) && doctorId.equals(appointment.getDoctor())){
+                                    if (app == true) {
+                                        for (Appointment appointment : appointments) {
+                                            if (data.equals(appointment.getDate()) && doctorId.equals(appointment.getDoctor())) {
                                                 if (dataIF.before(format.parse(appointment.getStartH())) && dataSF.after(format.parse(appointment.getStartH()))) {
                                                     Toast.makeText(getActivity(), "Exista deja o programare pentru acest doctor in intervalul orar ales!", Toast.LENGTH_SHORT).show();
 
@@ -360,9 +368,9 @@ public class EditAppointment extends Fragment {
                                         }
                                     }
 
-                                    if(app==true){
-                                        for(Appointment appointment: appointments){
-                                            if(data.equals(appointment.getDate()) && doctorId.equals(appointment.getDoctor())){
+                                    if (app == true) {
+                                        for (Appointment appointment : appointments) {
+                                            if (data.equals(appointment.getDate()) && doctorId.equals(appointment.getDoctor())) {
                                                 if (dataIF.after(format.parse(appointment.getStartH())) && dataSF.before(format.parse(appointment.getEndH()))) {
                                                     Toast.makeText(getActivity(), "Exista deja o programare pentru acest doctor in intervalul orar ales!", Toast.LENGTH_SHORT).show();
                                                     app = false;
@@ -371,6 +379,7 @@ public class EditAppointment extends Fragment {
                                             }
                                         }
                                     }
+
                                     if(app && ok){
                                         dbAppointments.child(String.valueOf(appoint.getAppId())).child("date").setValue(data);
                                         dbAppointments.child(String.valueOf(appoint.getAppId())).child("serviceCode").setValue(serviceId);
@@ -453,11 +462,11 @@ public class EditAppointment extends Fragment {
                             try {
 
                                 SimpleDateFormat format =new SimpleDateFormat("HH:mm");
-                                SimpleDateFormat f=new SimpleDateFormat("DD-M-YYYY");
+                                SimpleDateFormat f=new SimpleDateFormat("dd-M-yyyy", Locale.getDefault());
 
                                 Calendar cal=Calendar.getInstance();
                                 int year=cal.get(Calendar.YEAR);
-                                int month=cal.get(Calendar.MONTH);
+                                int month=cal.get(Calendar.MONTH)+1;
                                 int day =cal.get(Calendar.DAY_OF_MONTH);
                                 String currentDate=day+"-"+month+"-"+year;
                                 if (etDataEditApp.getText().toString().compareTo(currentDate)>0) {
@@ -492,6 +501,27 @@ public class EditAppointment extends Fragment {
                     alertDialog.show();
                 }
             });
+
+            try {
+                SimpleDateFormat f = new SimpleDateFormat("dd-M-yyyy", Locale.getDefault());
+
+                Calendar cal1 = Calendar.getInstance();
+                int year = cal1.get(Calendar.YEAR);
+                int month = cal1.get(Calendar.MONTH)+1;
+                int day = cal1.get(Calendar.DAY_OF_MONTH);
+                String currentDate = day + "-" + month + "-" + year;
+
+                Date cD=f.parse(currentDate);
+                Date data=f.parse(etDataEditApp.getText().toString());
+
+                if(data.before(cD)){
+                    tvEditProg.setVisibility(view.INVISIBLE);
+                    tvNotifPat.setVisibility(view.INVISIBLE);
+                }
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
         }
         else{
             //fragment istoric
@@ -551,6 +581,7 @@ public class EditAppointment extends Fragment {
 
             loadDataInSpinners2();
 
+
             for(Appointment a:IstoricPacient.appointmentsI){
                 if (IstoricPacient.appIstoric.equals(a.getAppId().toString())){
                     appoint=new Appointment(a.getAppId(),a.getDate(), a.getDoctor(),a.getEndH(),a.getPatient(),a.getServiceCode(), a.getStartH());
@@ -594,11 +625,11 @@ public class EditAppointment extends Fragment {
                             String serviciu=serviceId;
 
                             SimpleDateFormat format =new SimpleDateFormat("HH:mm");
-                            SimpleDateFormat f=new SimpleDateFormat("DD-M-YYYY");
+                            SimpleDateFormat f=new SimpleDateFormat("dd-M-yyyy", Locale.getDefault());
 
                             Calendar cal=Calendar.getInstance();
                             int year=cal.get(Calendar.YEAR);
-                            int month=cal.get(Calendar.MONTH);
+                            int month=cal.get(Calendar.MONTH)+1;
                             int day =cal.get(Calendar.DAY_OF_MONTH);
                             String currentDate=day+"-"+month+"-"+year;
 
@@ -631,10 +662,9 @@ public class EditAppointment extends Fragment {
                                     }
 
                                     //verificare interval
-                                    //verificare interval
-                                    if(app==true){
-                                        for(Appointment appointment: appointments){
-                                            if(data.equals(appointment.getDate()) && doctorId.equals(appointment.getDoctor())){
+                                    if (app == true) {
+                                        for (Appointment appointment : appointments) {
+                                            if (data.equals(appointment.getDate()) && doctorId.equals(appointment.getDoctor())) {
                                                 if (dataIF.after(format.parse(appointment.getStartH())) && dataIF.before(format.parse(appointment.getEndH()))) {
                                                     Toast.makeText(getActivity(), "Exista deja o programare pentru acest doctor in intervalul orar ales!", Toast.LENGTH_SHORT).show();
 
@@ -645,10 +675,10 @@ public class EditAppointment extends Fragment {
                                         }
                                     }
 
-                                    if(app==true){
-                                        for(Appointment appointment: appointments){
-                                            if(data.equals(appointment.getDate()) && doctorId.equals(appointment.getDoctor())){
-                                                if(dataIF.after(format.parse(appointment.getStartH())) && dataSF.after(format.parse(appointment.getEndH()))) {
+                                    if (app == true) {
+                                        for (Appointment appointment : appointments) {
+                                            if (data.equals(appointment.getDate()) && doctorId.equals(appointment.getDoctor())) {
+                                                if ((dataIF.after(format.parse(appointment.getStartH())) && dataIF.before(format.parse(appointment.getEndH()))) && dataSF.after(format.parse(appointment.getEndH()))) {
                                                     Toast.makeText(getActivity(), "Exista deja o programare pentru acest doctor in intervalul orar ales!", Toast.LENGTH_SHORT).show();
 
                                                     app = false;
@@ -670,9 +700,9 @@ public class EditAppointment extends Fragment {
                             }
                         }
                     }*/
-                                    if(app==true){
-                                        for(Appointment appointment: appointments){
-                                            if(data.equals(appointment.getDate()) && doctorId.equals(appointment.getDoctor())){
+                                    if (app == true) {
+                                        for (Appointment appointment : appointments) {
+                                            if (data.equals(appointment.getDate()) && doctorId.equals(appointment.getDoctor())) {
                                                 if (dataIF.before(format.parse(appointment.getStartH())) && dataSF.after(format.parse(appointment.getStartH()))) {
                                                     Toast.makeText(getActivity(), "Exista deja o programare pentru acest doctor in intervalul orar ales!", Toast.LENGTH_SHORT).show();
 
@@ -683,9 +713,9 @@ public class EditAppointment extends Fragment {
                                         }
                                     }
 
-                                    if(app==true){
-                                        for(Appointment appointment: appointments){
-                                            if(data.equals(appointment.getDate()) && doctorId.equals(appointment.getDoctor())){
+                                    if (app == true) {
+                                        for (Appointment appointment : appointments) {
+                                            if (data.equals(appointment.getDate()) && doctorId.equals(appointment.getDoctor())) {
                                                 if (dataIF.after(format.parse(appointment.getStartH())) && dataSF.before(format.parse(appointment.getEndH()))) {
                                                     Toast.makeText(getActivity(), "Exista deja o programare pentru acest doctor in intervalul orar ales!", Toast.LENGTH_SHORT).show();
                                                     app = false;
@@ -694,6 +724,7 @@ public class EditAppointment extends Fragment {
                                             }
                                         }
                                     }
+
 
                                     if(app==true && ok==true){
                                         dbAppointments.child(String.valueOf(appoint.getAppId())).child("date").setValue(data);
@@ -706,6 +737,7 @@ public class EditAppointment extends Fragment {
                                 }
                             } catch (ParseException e) {
                                 e.printStackTrace();
+                                Toast.makeText(getActivity(), "Va rugam verificati datele introduse!",Toast.LENGTH_SHORT).show();
                             }
                             dialog.dismiss();
 
@@ -778,11 +810,11 @@ public class EditAppointment extends Fragment {
 
                             try {
                                 SimpleDateFormat format =new SimpleDateFormat("HH:mm");
-                                SimpleDateFormat f=new SimpleDateFormat("DD-M-YYYY");
+                                SimpleDateFormat f=new SimpleDateFormat("dd-M-yyyy", Locale.getDefault());
 
                                 Calendar cal=Calendar.getInstance();
                                 int year=cal.get(Calendar.YEAR);
-                                int month=cal.get(Calendar.MONTH);
+                                int month=cal.get(Calendar.MONTH)+1;
                                 int day =cal.get(Calendar.DAY_OF_MONTH);
                                 String currentDate=day+"-"+month+"-"+year;
                                 if (etDataEditApp.getText().toString().compareTo(currentDate)>0) {
@@ -817,6 +849,28 @@ public class EditAppointment extends Fragment {
                     alertDialog.show();
                 }
             });
+
+
+            try {
+                DateFormat f = new SimpleDateFormat("dd-M-yyyy", Locale.getDefault());
+
+                Calendar cal1 = Calendar.getInstance();
+                int year = cal1.get(Calendar.YEAR);
+                int month = cal1.get(Calendar.MONTH)+1;
+                int day = cal1.get(Calendar.DAY_OF_MONTH);
+                String currentDate = day + "-" + month + "-" + year;
+
+                Date cD=f.parse(currentDate);
+                Date data=f.parse(etDataEditApp.getText().toString());
+
+                if(data.before(cD)){
+                    tvEditProg.setVisibility(view.INVISIBLE);
+                    tvNotifPat.setVisibility(view.INVISIBLE);
+                }
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
 
         }
 

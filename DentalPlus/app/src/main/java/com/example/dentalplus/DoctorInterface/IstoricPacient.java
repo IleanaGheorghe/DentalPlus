@@ -36,14 +36,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link IstoricPacient#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class IstoricPacient extends Fragment {
+public class IstoricPacient extends Fragment  {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -84,18 +87,18 @@ public class IstoricPacient extends Fragment {
         }
     }
 
-    TextView tvInfoPat,tvEditPat,tvIstoricPat,tvDeletePat;
+    TextView tvInfoPat,tvEditPat,tvIstoricPat,tvDeletePat,tvProgViitoarePat;
     EditText etNumeEditPat,etTelefonEditPat,etEmailEditPat,etObservatiiEditPat;
     Button btnAPEL, btnEmail;
 
-    ListView lvIstoric;
+    ListView lvIstoric,lvProgViitoare;
 
     DatabaseReference dbPatientHolder, dbAppointments, dbInvoices, dbRAppoint;
     ArrayList<Patient> pacienti;
-    public static ArrayList<AppointmentHolder> appointments;
-    public static ArrayList<Appointment> appointmentsI;
-    public static ArrayList<Invoice> invoices;
-    public static AppointmentAdapter appointmentAdapter;
+    public static ArrayList<AppointmentHolder> appointments, appointmentsViitor;
+    public static ArrayList<Appointment> appointmentsI, appointmentsIViitor;
+    public static ArrayList<Invoice> invoices, invoicesViitor;
+    public static AppointmentAdapter appointmentAdapter, appointmentAdapterViitor;
     public static String appIstoric;
 
     @Override
@@ -110,6 +113,7 @@ public class IstoricPacient extends Fragment {
         tvEditPat=(TextView)view.findViewById(R.id.tvEditPat);
         tvIstoricPat=(TextView)view.findViewById(R.id.tvIstoricPat);
         tvDeletePat=(TextView)view.findViewById(R.id.tvDeletePat);
+
 
         etNumeEditPat=(EditText)view.findViewById(R.id.etNumeEditPat);
         etTelefonEditPat=(EditText)view.findViewById(R.id.etTelefonEditPat);
@@ -201,10 +205,19 @@ public class IstoricPacient extends Fragment {
             }
         });
 
-        AppointmentAdapter.appointmentAdapte.clear();
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat f = new SimpleDateFormat("DD-M-YYYY");
 
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        final String currentDate = day + "-" + month + "-" + year;
+
+        AppointmentAdapter.appointmentAdapte.clear();
         dbAppointments=FirebaseDatabase.getInstance().getReference("appointments");
         appointments=new ArrayList<>();
+
         dbAppointments.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

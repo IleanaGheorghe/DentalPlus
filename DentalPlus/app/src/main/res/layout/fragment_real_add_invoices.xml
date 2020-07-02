@@ -109,6 +109,7 @@
                 android:layout_marginLeft="5dp"
                 android:background="@drawable/background_login"
                 android:hint="Doctor.."
+                android:textColor="#000000"
                 android:textAlignment="center"
                 android:enabled="false"
                 android:textSize="16sp" />
@@ -139,6 +140,7 @@
                 android:layout_marginLeft="5dp"
                 android:background="@drawable/background_login"
                 android:hint="Pacient.."
+                android:textColor="#000000"
                 android:enabled="false"
                 android:textAlignment="center"
                 android:textSize="16sp" />
@@ -170,6 +172,7 @@
                 android:background="@drawable/background_login"
                 android:hint="Valoare factura.."
                 android:enabled="false"
+                android:textColor="#000000"
                 android:textAlignment="center"
                 android:textSize="16sp" />
         </LinearLayout>

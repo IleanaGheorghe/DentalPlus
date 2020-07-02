@@ -72,7 +72,7 @@ public class fragment_SeeReports extends Fragment {
         }
     }
     TextView tvRap;
-    Button btnRap1, btnRap2, btnRap3;
+    Button btnRap1, btnRap2, btnRap3, btnRap4;
     public static ArrayList<Service> listaServicii;
     public static ArrayList<Doctor> listaDoctori;
     public static ArrayList<Appointment> listaProgramari;
@@ -91,6 +91,7 @@ public class fragment_SeeReports extends Fragment {
         btnRap1=(Button)view.findViewById(R.id.btnRap1);
         btnRap2=(Button)view.findViewById(R.id.btnRap2);
         btnRap3=(Button)view.findViewById(R.id.btnRap3);
+        btnRap4=(Button)view.findViewById(R.id.btnRap4);
 
         listaServicii=new ArrayList<>();
         dbServices= FirebaseDatabase.getInstance().getReference("services");
@@ -185,6 +186,20 @@ public class fragment_SeeReports extends Fragment {
                 Fragment fragment=null;
                 if(v== v.findViewById(R.id.btnRap3)){
                     fragment=new Raport3();
+                }
+                FragmentTransaction transaction=getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container,fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+        btnRap4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment=null;
+                if(v== v.findViewById(R.id.btnRap4)){
+                    fragment=new Raport4();
                 }
                 FragmentTransaction transaction=getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container,fragment);
