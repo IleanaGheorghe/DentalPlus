@@ -201,7 +201,8 @@ public class RealAddInvoices extends Fragment {
                     fragment_addInvoices.invoiceList.clear();
                     fragment_addInvoices.invoiceAdapter.clear();
                     fragment_addInvoices.invoiceHolders.clear();
-                    //InvoiceAdapter.invoiceAdapte.clear();
+                    InvoiceAdapter.invoiceAdapte.clear();
+
                     FragmentTransaction transaction=getFragmentManager().beginTransaction();
                     transaction.replace(R.id.fragment_container,fragment);
                     transaction.addToBackStack(null);
